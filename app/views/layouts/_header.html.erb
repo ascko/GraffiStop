@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "twitterio", root_path, id: "logo" %>
+    <%= link_to "graffistop", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
@@ -13,7 +13,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profil", current_user %></li>
-              <li><%= link_to "Ustawienia", '#' %></li>
+<%#              <li><%= link_to "Ustawienia", '#' %><%#</li>%>
               <li class="divider"></li>
               <li>
                 <%= link_to "Wyloguj", logout_path, method: "delete" %>

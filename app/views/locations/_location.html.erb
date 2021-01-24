@@ -1,0 +1,15 @@
+<li id="<%= location.id %>">
+  <%= link_to gravatar_for(location.user, size: 50), location.user %>
+  <span class="user"><%= link_to location.user.name, location.user %></span>
+  <span class="content"><%= location.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(location.created_at) %> ago.
+    <% if current_user?(location.user) %>
+      <%= link_to "usuń", location, method: :delete,
+                                       data: { confirm: "Jesteś pewien?" } %>
+      <% if location.verified? %>
+        <h5>Lokalizacja zweryfikowana</h5>
+      <% end %>
+    <% end %>
+  </span>
+</li>

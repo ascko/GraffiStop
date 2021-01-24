@@ -1,26 +1,31 @@
 <% if logged_in? %>
   <div class="row">
+    <h1>
+      <img src="/assets/img/map_location.jpg" alt="map" />
+    </h1>
     <aside class="col-md-4">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
+      <section class="location_form">
+        <%= render 'shared/location_form' %>
       </section>
     </aside>
     <div class="col-md-8">
-      <h3>Twój feed</h3>
+      <h3>Twoje lokaliacje</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
   <div class="center hero-unit">
-    <h1>TWITTERIO</h1>
+    <h1>
+      <img src="/assets/img/logo.png" alt="logo" />
+    </h1>
 
-    <h2>
-      To mala apka bazodanowa
-      imitujaca twittera
-    </h2>
+<%#    <h2>%>
+<%#      To mala apka bazodanowa%>
+<%#      imitujaca twittera%>
+<%#    </h2>%>
 
     <%= link_to "Załóż Konto!", signup_path, class: "btn btn-large btn-primary" %>
   </div>

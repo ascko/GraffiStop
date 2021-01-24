@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page], :per_page => 8)
+    @locations = @user.locations.paginate(page: params[:page], :per_page => 8)
   end
 
   def new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to Twitterio!"
+      flash[:success] = "Witamy w GraffiStop!"
       redirect_to root_url
     else
       render 'new'
