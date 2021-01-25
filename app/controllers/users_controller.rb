@@ -26,7 +26,7 @@ EOF
   end
 
 
-  api :GET, '/users', "List of managed users"
+  api :GET, '/users', "Users' index"
   description <<EOF
     List users
 EOF
@@ -35,7 +35,7 @@ EOF
     @users = User.paginate(page: params[:page], :per_page => 10)
   end
 
-  api :GET, '/users/:id', "gets current user"
+  api :GET, '/users/:id', "Gets user"
   returns :user, :desc => "The user"
   param :id, String, required: true, desc: "id of user"
 
@@ -48,7 +48,7 @@ EOF
     @user = User.new
   end
  
-  api :POST, '/v1/users', "creates a new user"
+  api :POST, '/users', "Creates a new user"
   param :user, Hash, desc: "User data" do
     param :email, String, :required => true
     param :name, String
@@ -75,7 +75,7 @@ EOF
 
 
 
-  api :PUT, '/v1/users/:id', "Updates user"
+  api :PUT, '/users/:id', "Updates user"
   param :id, String, required: true, desc: "id of user"
   param :user, Hash, desc: "User data" do
     param :email, String,  :required => false, :desc => "if E-Mail is changed we actually start reconfirmation"
@@ -93,6 +93,18 @@ EOF
     @user = User.update_attributes(user_params)
   end
 
+
+  api :DELETE, '/users/:id', "Removes user"
+  param :id, String, required: true, desc: "id of user"
+  returns :user, code: 204
+  description <<EOF
+      removes user
+EOF
+
+
+  def destroy
+    @user.destroy
+  end
 
 
   private
