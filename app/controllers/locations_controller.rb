@@ -40,7 +40,7 @@ EOF
   param :location, Hash, desc: "Location data" do
     param :content, String, :required => true
     param :verified, :boolean
-    param :user_id, Integer, :required => true
+    param :user_id, Integer
   end
   description <<-EOF
     creates a new location

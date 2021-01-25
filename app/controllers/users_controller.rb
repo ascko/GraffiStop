@@ -90,7 +90,10 @@ EOF
 
 
   def update
-    @user = User.update_attributes(user_params)
+    @user = User.find(params[:id]).update_attributes(user_params)
+    if @user.errors.blank?
+      redirect_to admin_users_path, :notice => "User updated successfully."
+    end
   end
 
 
