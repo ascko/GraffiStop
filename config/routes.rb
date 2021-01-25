@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'static_pages#home'

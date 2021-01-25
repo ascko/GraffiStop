@@ -9,7 +9,6 @@ gem 'rails', '~> 5.2.0'
 gem 'bootstrap-sass'
 gem 'annotate'
 gem 'bcrypt'
-gem 'byebug'
       gem 'pry'
 gem 'faker'
 gem "will_paginate"
