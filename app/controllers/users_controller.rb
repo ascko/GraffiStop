@@ -99,7 +99,7 @@ EOF
 
   api :DELETE, '/users/:id', "Removes user"
   param :id, String, required: true, desc: "id of user"
-  returns :user, code: 204
+  returns code: 204
   description <<EOF
       removes user
 EOF

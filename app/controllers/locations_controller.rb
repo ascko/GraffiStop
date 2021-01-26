@@ -78,14 +78,14 @@ EOF
 
   api :DELETE, '/locations/:id', "Removes location"
   param :id, String, required: true, desc: "id of location"
-  returns :location, code: 204
+  returns code: 204
   description <<EOF
       removes location
 EOF
 
   def destroy
     @location.destroy
-    flash[:success] = "Location deleted"
+    flash[:success] = "Lokacja usunięta"
     redirect_to request.referrer || root_url
   end
 
